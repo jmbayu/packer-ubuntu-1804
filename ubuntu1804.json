@@ -5,12 +5,12 @@
   "provisioners": [
     {
       "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "execute_command": "echo 'mobile' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "script": "scripts/ansible.sh"
     },
     {
       "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "execute_command": "echo 'mobile' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "script": "scripts/setup.sh"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "execute_command": "echo 'mobile' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "script": "scripts/cleanup.sh"
     }
   ],
@@ -40,9 +40,9 @@
         " debian-installer=en_US<wait>",
         " fb=false<wait>",
         " initrd=/install/initrd.gz<wait>",
-        " kbd-chooser/method=us<wait>",
-        " keyboard-configuration/layout=USA<wait>",
-        " keyboard-configuration/variant=USA<wait>",
+        " kbd-chooser/method=de<wait>",
+        " keyboard-configuration/layout=DE<wait>",
+        " keyboard-configuration/variant=DE<wait>",
         " locale=en_US<wait>",
         " netcfg/get_domain=vm<wait>",
         " netcfg/get_hostname=vagrant<wait>",
@@ -58,16 +58,16 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "iso/ubuntu-18.04.1-server-amd64.iso",
-        "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.1-server-amd64.iso"
+        "iso/ubuntu-18.10-live-server-amd64.iso",
+        "https://ftp-stud.hs-esslingen.de/pub/Mirrors/releases.ubuntu.com/18.10/ubuntu-18.10-live-server-amd64.iso"
       ],
       "iso_checksum_type": "sha256",
-      "iso_checksum": "a5b0ea5918f850124f3d72ef4b85bda82f0fcd02ec721be19c1a6952791c8ee8",
-      "ssh_username": "vagrant",
-      "ssh_password": "vagrant",
+      "iso_checksum": "7b9f670c749f797a0f7481d619ce8807edac052c97e1a0df3b130c95efae4765",
+      "ssh_username": "mobile",
+      "ssh_password": "mobile",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
+      "shutdown_command": "echo 'mobile'|sudo -S shutdown -P now",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
       "vm_name": "packer-ubuntu-18.04-amd64",
